@@ -14,7 +14,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import model.LibroDTO;
+import dto.LibroDTO;
 
 public class LibroApiController {
     public String llamarAPI(String path, String titulo) throws IOException {
