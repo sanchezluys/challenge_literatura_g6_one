@@ -55,6 +55,7 @@
 
 ### Menú 1 Buscar Libro por titulo
 
+![img.png](src/main/img/buscar_libro_por_titulo.png)
 
 ### Menú 2 Listar libros registrados
 

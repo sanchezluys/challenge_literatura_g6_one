@@ -76,6 +76,9 @@ public class LibroApiController {
 
             // Imprimir la lista de libros en forma de tabla
             imprimirTablaLibros(listaLibros);
+            //
+            System.out.println("\uD83D\uDCBE Guardando Libros/Autores en la Base de Datos...");
+            guardarLibrosAutoresBD(listaLibros);
 
         }
         else{
@@ -102,11 +105,16 @@ public class LibroApiController {
             System.out.printf("%-" + anchoColumnaId + "s %-"+ anchoColumnaTitulo + "s %-"+ anchoColumnaIdiomas +"s %-"+ anchoColumnaDescargas+ "s %-" +  anchoColumnaAutores + "s%n", libro.id(), libro.title(), libro.languages(), libro.download_count(), String.join(", ", libro.authors()));
         }
         System.out.println("-".repeat(anchoColumnaId + anchoColumnaTitulo + anchoColumnaIdiomas+ anchoColumnaDescargas +  anchoColumnaAutores));
+
     }
 
 
     // buscar por autor
     public void buscarPorAutor(String nombreAutor){
+
+    }
+
+    public void guardarLibrosAutoresBD(List<LibroDTO> libroDTO){
 
     }
 }
