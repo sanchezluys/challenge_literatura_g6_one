@@ -33,7 +33,7 @@
 | 3    | Data JPA    | para facilitar el desarrollo usando bd |
 | 4    | PostgreSQL  | Base de datos a usar                   |
 | 5    | Insomia     | Para validar el uso de la API          |
-| 6    | JSON        | Dependencia para manejo de los Json    |
+| 6    | GSON        | Dependencia para manejo de los Json    |
 
 
 ### Clases
