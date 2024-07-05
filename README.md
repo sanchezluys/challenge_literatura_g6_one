@@ -73,7 +73,7 @@
 ### Dependencias:
 
     <dependency>
-        <groupId>org.json</groupId>
-        <artifactId>json</artifactId>
-        <version>20240303</version>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.11.0</version>
     </dependency>
