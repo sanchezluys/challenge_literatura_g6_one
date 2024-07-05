@@ -33,6 +33,7 @@
 | 3    | Data JPA    | para facilitar el desarrollo usando bd |
 | 4    | PostgreSQL  | Base de datos a usar                   |
 | 5    | Insomia     | Para validar el uso de la API          |
+| 6    | JSON        | Dependencia para manejo de los Json    |
 
 
 ### Clases
@@ -50,12 +51,28 @@
 
 ### Menú Principal
 
+![img.png](src/main/img/menu_principal.png)
 
-### Menú 2
-
-
-### Menú 3
+### Menú 1 Buscar Libro por titulo
 
 
-### Menú salir
+### Menú 2 Listar libros registrados
 
+
+### Menú 3 Listar autores registrados
+
+### Menú 4 Listar autores vivos en determinado año
+
+
+### Menú 5 Listar libros por idioma
+
+### Menú 8 Salir
+
+
+### Dependencias:
+
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20240303</version>
+    </dependency>

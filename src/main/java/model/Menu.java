@@ -2,6 +2,7 @@ package model;
 
 import controller.LibroController;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
@@ -30,7 +31,7 @@ public class Menu {
         System.out.println("╚════════════════════════════════════════════════════════╝");;
     }
 
-    public void opciones() {
+    public void opciones() throws IOException {
         String opcion="0";
         Scanner scanner = new Scanner(System.in);
         //

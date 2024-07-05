@@ -1,8 +1,20 @@
 package controller;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class LibroController {
-    public void buscarPorTitulo() {
+    public void buscarPorTitulo() throws IOException {
         this.buscarPorTituloEncabezado();
+        this.recibirTituloLibro();
+    }
+
+    private void recibirTituloLibro() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        String titulo = scanner.nextLine();
+        LibroApiController api = new LibroApiController();
+        api.buscarPorNombre(titulo);
+
     }
 
     private void buscarPorTituloEncabezado() {
@@ -10,9 +22,9 @@ public class LibroController {
         System.out.println("║           BUSCAR LIBRO POR TITULO                      ║");
         System.out.println("╠════════════════════════════════════════════════════════╣");
         System.out.println("║ Ingrese el nombre del libro a ser buscado, ejemplo:    ║");
-        System.out.println("║ > el principito                                        ║");
+        System.out.println("║ > don quijote de la mancha                             ║");
         System.out.println("╚════════════════════════════════════════════════════════╝");
-        System.out.print("Ingrese el titulo: ");
+        System.out.print("Ingrese el título para buscarlo: ");
     }
 
     public void listarLibros() {
