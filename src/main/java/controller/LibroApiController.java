@@ -8,15 +8,28 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dto.LibroDTO;
+import model.Autor;
+import model.AutorRepository;
+import model.Libro;
+import model.LibroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class LibroApiController {
+
+    @Autowired
+    private LibroRepository libroRepository;
+
+    @Autowired
+    private AutorRepository autorRepository;
     public String llamarAPI(String path, String titulo) throws IOException {
 
         String url_str = "http://gutendex.com/"+path+titulo.replace(" ","%20");
@@ -114,7 +127,26 @@ public class LibroApiController {
 
     }
 
-    public void guardarLibrosAutoresBD(List<LibroDTO> libroDTO){
+    public void guardarLibrosAutoresBD(List<LibroDTO> librosDTO){
+        for (LibroDTO libroDTO_inner : librosDTO) {
+            Libro libro = new Libro();
+            libro.setId(libroDTO_inner.id());
+            libro.setTitle(libroDTO_inner.title());
+            libro.setLanguages(libroDTO_inner.languages());
+            libro.setDownloadCount(libroDTO_inner.download_count());
 
+            Set<Autor> autores = new HashSet<>();
+            for (String autorName : libroDTO_inner.authors()) {
+                Autor autor = new Autor();
+                autor.setName(autorName);
+                autores.add(autor);
+            }
+            libro.setAutores(autores);
+
+            libroRepository.save(libro);
+        }
+
+        System.out.println("\uD83D\uDCBE Libros/Autores guardados en la Base de Datos!");
     }
 }
+
