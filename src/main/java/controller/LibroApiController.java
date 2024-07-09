@@ -72,7 +72,7 @@ public class LibroApiController {
             // Mapear cada libro a un DTO
             for (JsonElement libroElement : librosArray) {
                 JsonObject libroObject = libroElement.getAsJsonObject();
-
+                //
                 Integer id = libroObject.get("id").getAsInt();
                 String title = libroObject.get("title").getAsString();
                 String languages = libroObject.get("languages").getAsString();
@@ -115,7 +115,7 @@ public class LibroApiController {
 
         // Imprimir cada libro en una fila de la tabla
         for (LibroDTO libro : listaLibros) {
-            System.out.printf("%-" + anchoColumnaId + "s %-"+ anchoColumnaTitulo + "s %-"+ anchoColumnaIdiomas +"s %-"+ anchoColumnaDescargas+ "s %-" +  anchoColumnaAutores + "s%n", libro.id(), libro.title(), libro.languages(), libro.download_count(), String.join(", ", libro.authors()));
+            System.out.printf("%-" + anchoColumnaId + "s %-"+ anchoColumnaTitulo + "s %-"+ anchoColumnaIdiomas +"s %-"+ anchoColumnaDescargas+ "s %-" +  anchoColumnaAutores + "s%n", libro.id(), libro.Titulo(), libro.Idiomas(), libro.Descargas(), String.join(", ", libro.Autores()));
         }
         System.out.println("-".repeat(anchoColumnaId + anchoColumnaTitulo + anchoColumnaIdiomas+ anchoColumnaDescargas +  anchoColumnaAutores));
 
@@ -130,15 +130,15 @@ public class LibroApiController {
     public void guardarLibrosAutoresBD(List<LibroDTO> librosDTO){
         for (LibroDTO libroDTO_inner : librosDTO) {
             Libro libro = new Libro();
-            libro.setId(libroDTO_inner.id());
-            libro.setTitle(libroDTO_inner.title());
-            libro.setLanguages(libroDTO_inner.languages());
-            libro.setDownloadCount(libroDTO_inner.download_count());
+            //libro.setId(libroDTO_inner.id());
+            libro.setTitle(libroDTO_inner.Titulo());
+            libro.setLanguages(libroDTO_inner.Idiomas());
+            libro.setDownloadCount(libroDTO_inner.Descargas());
 
             Set<Autor> autores = new HashSet<>();
-            for (String autorName : libroDTO_inner.authors()) {
+            for (String autorName : libroDTO_inner.Autores()) {
                 Autor autor = new Autor();
-                autor.setName(autorName);
+                autor.setNombre(autorName);
                 autores.add(autor);
             }
             libro.setAutores(autores);

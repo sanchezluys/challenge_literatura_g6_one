@@ -26,14 +26,15 @@
 
 ### Tecnologías Utilizadas
 
-| Item | Descripción | Razón                                  |
-|------|-------------|----------------------------------------|
-| 1    | Java SDK 17 | nucleo de la aplicacion                |
-| 2    | Spring Boot | framework para facilitar desarrollo    |
-| 3    | Data JPA    | para facilitar el desarrollo usando bd |
-| 4    | PostgreSQL  | Base de datos a usar                   |
-| 5    | Insomia     | Para validar el uso de la API          |
-| 6    | GSON        | Dependencia para manejo de los Json    |
+| Item | Descripción | Razón                                       |
+|------|-------------|---------------------------------------------|
+| 1    | Java SDK 17 | nucleo de la aplicacion                     |
+| 2    | Spring Boot | framework para facilitar desarrollo         |
+| 3    | Data JPA    | para facilitar el desarrollo usando bd      |
+| 4    | PostgreSQL  | Base de datos a usar                        |
+| 5    | Insomia     | Para validar el uso de la API               |
+| 6    | GSON        | Dependencia para manejo de los Json         |
+| 7    | Jackson     | Dependencia para manejo de json, 2da opción |
 
 
 ### Clases

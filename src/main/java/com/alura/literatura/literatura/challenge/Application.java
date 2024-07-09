@@ -1,15 +1,15 @@
 package com.alura.literatura.literatura.challenge;
-
+import model.LibroRepository;
 import model.Menu;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.awt.*;
-
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-
+	//@Autowired
+	//private LibroRepository libroRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}

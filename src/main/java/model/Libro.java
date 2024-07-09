@@ -10,13 +10,14 @@ import java.util.Set;
 public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
+    @Column(unique = true)
     private String title;
     private String languages;
-    private Integer downloadCount;
+    private Integer download_count;
 
-    @OneToMany(mappedBy = "libro")
+   // @OneToMany(mappedBy = "libro")
     private Set<Autor> autores = new HashSet<>();
 
     public Set<Autor> getAutores() {
@@ -27,9 +28,22 @@ public class Libro {
         this.autores = autores;
     }
 
-
-    public void setId(Integer id) {
+    public Long getId() {
+        return id;
     }
+
+    protected void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getDownload_count() {
+        return download_count;
+    }
+
+    public void setDownload_count(Integer download_count) {
+        this.download_count = download_count;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -47,10 +61,10 @@ public class Libro {
     }
 
     public Integer getDownloadCount() {
-        return downloadCount;
+        return download_count;
     }
 
     public void setDownloadCount(Integer downloadCount) {
-        this.downloadCount = downloadCount;
+        this.download_count = downloadCount;
     }
 }

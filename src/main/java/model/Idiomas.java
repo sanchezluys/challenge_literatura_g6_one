@@ -1,9 +1,12 @@
 package model;
 
 public enum Idiomas {
-    ES("Español", "español", "spanish"),
-    EN("Ingles", "ingles", "english"),
-    FR("Frances", "frances");
+    ESPAÑOL("es", "español", "spanish"),
+    INGLES("en", "ingles", "english"),
+    HUNGARO("hu", "hungaro"),
+    FINES("fi","fines"),
+    CATALAN("ca", "catalan"),
+    FRANCES("fr", "frances");
 
     private final String nombre;
     private final String[] alias;
